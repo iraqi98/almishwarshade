@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --sand: #F2E9D8;
+  --sand-deep: #E7D9BC;
+  --iron: #1C1F1B;
+  --clay: #C2703A;
+  --clay-deep: #A05627;
+  --gold: #E8B84B;
+  --shade-green: #47584D;
+  --steel: #8A9089;
+}
+
+@theme inline {
+  --color-sand: var(--sand);
+  --color-sand-deep: var(--sand-deep);
+  --color-iron: var(--iron);
+  --color-clay: var(--clay);
+  --color-clay-deep: var(--clay-deep);
+  --color-gold: var(--gold);
+  --color-shade-green: var(--shade-green);
+  --color-steel: var(--steel);
+  --font-display: var(--font-cairo), "Segoe UI", "Tahoma", "Arial", sans-serif;
+  --font-body: var(--font-almarai), "Segoe UI", "Tahoma", "Arial", sans-serif;
+}
+
+body {
+  background: var(--sand);
+  color: var(--iron);
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  background: none;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+@keyframes driftShade {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(-3%, 2%); }
+  100% { transform: translate(0, 0); }
+}
+
+.shade-drift {
+  animation: driftShade 18s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shade-drift { animation: none; }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.stripe-mask {
+  -webkit-mask-image: repeating-linear-gradient(115deg, #000 0px, #000 2px, transparent 2px, transparent 26px);
+  mask-image: repeating-linear-gradient(115deg, #000 0px, #000 2px, transparent 2px, transparent 26px);
+}
+
+@keyframes ripple-fade {
+  0%   { transform: scale(0); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 0; }
+}
