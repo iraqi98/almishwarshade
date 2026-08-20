@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { waLink, INSTAGRAM_LINK } from "@/lib/products";
 import { InstagramIcon, WhatsappIcon } from "@/components/icons";
+
+const logoSrc = `${process.env.NODE_ENV === "production" ? "/almishwarshade" : ""}/logo.png`;
 
 const links = [
   { href: "#products", label: "المنتجات" },
@@ -20,13 +21,12 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-iron/8 bg-sand/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl flex-nowrap items-center justify-between px-6 py-4 md:px-10">
         <a href="#top" className="flex items-center gap-2 text-iron no-underline">
-          <Image
-            src="/logo.png"
+          <img
+            src={logoSrc}
             alt="مظلات المشوار"
             width={40}
             height={40}
             className="h-10 w-10 rounded-lg object-contain"
-            priority
           />
           <span className="font-display text-lg font-extrabold tracking-tight">
             مظلات المشوار

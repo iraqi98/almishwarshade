@@ -1,6 +1,7 @@
-import Image from "next/image";
 import { waLink, MAP_LINK, INSTAGRAM_LINK } from "@/lib/products";
 import { InstagramIcon, WhatsappIcon } from "@/components/icons";
+
+const logoSrc = `${process.env.NODE_ENV === "production" ? "/almishwarshade" : ""}/logo.png`;
 
 function PinIcon({ className }: { className?: string }) {
   return (
@@ -51,8 +52,8 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-5 py-16 md:grid-cols-3 md:gap-12 md:px-8">
         <div>
           <div className="flex items-center gap-2">
-            <Image
-              src="/logo.png"
+            <img
+              src={logoSrc}
               alt="مظلات المشوار"
               width={40}
               height={40}
