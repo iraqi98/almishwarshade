@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import ProductGrid from "@/components/ProductGrid";
 import HowItWorks from "@/components/HowItWorks";
 import PriceCalculator from "@/components/PriceCalculator";
+import Gallery from "@/components/Gallery";
 import QuoteForm from "@/components/QuoteForm";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
@@ -17,6 +18,9 @@ export default function Home() {
       </Reveal>
       <Reveal>
         <HowItWorks />
+      </Reveal>
+      <Reveal>
+        <Gallery />
       </Reveal>
       <Reveal>
         <PriceCalculator />
