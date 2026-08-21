@@ -1,10 +1,15 @@
 import type { NextConfig } from "next";
 
+const basePath = "/almishwarshade";
+
 const nextConfig: NextConfig = {
   output: "export",
   images: { unoptimized: true },
-  basePath: "/almishwarshade",
-  assetPrefix: "/almishwarshade",
+  basePath,
+  assetPrefix: basePath,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
 };
 
 export default nextConfig;

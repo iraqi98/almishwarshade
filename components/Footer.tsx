@@ -1,7 +1,8 @@
 import { waLink, MAP_LINK, INSTAGRAM_LINK } from "@/lib/products";
 import { InstagramIcon, WhatsappIcon } from "@/components/icons";
+import { BASE_PATH } from "@/lib/config";
 
-const logoSrc = `${process.env.NODE_ENV === "production" ? "/almishwarshade" : ""}/logo.png`;
+const logoSrc = `${BASE_PATH}/logo.png`;
 
 function PinIcon({ className }: { className?: string }) {
   return (
